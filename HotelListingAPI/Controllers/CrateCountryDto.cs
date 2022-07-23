@@ -1,6 +1,8 @@
-﻿namespace HotelListingAPI.Controllers
+﻿using HotelListingAPI.Client.Country;
+
+namespace HotelListingAPI.Controllers
 {
-    public class CrateCountryDto
+    public class CrateCountryDto : BaseCountryDto
     {
     }
 }
