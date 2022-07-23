@@ -52,35 +52,15 @@ namespace HotelListingAPI.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutHotel(int id, HotelDto hotelDto)
         {
-            if (id != hotelDto.Id)
-            {
-                return BadRequest();
-            }
-
+            if (id != hotelDto.Id) { return BadRequest(); }
             var hotel = await _hotelsRepository.GetAsync(id);
-            if (hotel == null)
-            {
-                return NotFound();
-            }
-
+            if (hotel == null) { return NotFound(); }
             _mapper.Map(hotelDto, hotel);
-
-            try
-            {
+            try {
                 await _hotelsRepository.UpdateAsync(hotel);
+            } catch (DbUpdateConcurrencyException) {
+                if (!await HotelExists(id)) { return NotFound(); } else { throw; }
             }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!await HotelExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
             return NoContent();
         }
 
