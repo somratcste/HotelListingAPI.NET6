@@ -1,9 +1,9 @@
-﻿using HotelListingAPI.Client.User;
-using HotelListingAPI.Contracts;
+﻿using HotelListing.API.Client.User;
+using HotelListing.API.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HotelListingAPI.Controllers
+namespace HotelListing.API.Controllers
 {
 
     [Route("api/[controller]")]
@@ -15,8 +15,8 @@ namespace HotelListingAPI.Controllers
 
         public AccountController(IAuthManager authManager, ILogger<AccountController> logger)
         {
-            this._authManager = authManager;
-            this._logger = logger;
+            _authManager = authManager;
+            _logger = logger;
         }
 
         // POST: api/Account/register

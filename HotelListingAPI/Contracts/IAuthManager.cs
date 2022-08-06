@@ -1,7 +1,7 @@
-﻿using HotelListingAPI.Client.User;
+﻿using HotelListing.API.Client.User;
 using Microsoft.AspNetCore.Identity;
 
-namespace HotelListingAPI.Contracts
+namespace HotelListing.API.Contracts
 {
     public interface IAuthManager
     {

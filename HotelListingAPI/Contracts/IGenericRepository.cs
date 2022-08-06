@@ -1,6 +1,6 @@
-﻿using HotelListingAPI.Client;
+﻿using HotelListing.API.Client;
 
-namespace HotelListingAPI.Contracts
+namespace HotelListing.API.Contracts
 {
     public interface IGenericRepository<T> where T : class
     {

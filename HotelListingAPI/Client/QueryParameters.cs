@@ -1,4 +1,4 @@
-﻿namespace HotelListingAPI.Client
+﻿namespace HotelListing.API.Client
 {
     public class QueryParameters
     {

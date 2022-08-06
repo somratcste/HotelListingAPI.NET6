@@ -1,4 +1,4 @@
-﻿namespace HotelListingAPI.Client.User
+﻿namespace HotelListing.API.Client.User
 {
     public class AuthResponseDto
     {

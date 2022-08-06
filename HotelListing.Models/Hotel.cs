@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HotelListingAPI.Data
+namespace HotelListing.API.Models
 {
     public class Hotel
     {

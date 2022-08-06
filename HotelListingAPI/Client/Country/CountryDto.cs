@@ -1,6 +1,6 @@
-﻿using HotelListingAPI.Client.Hotel;
+﻿using HotelListing.API.Client.Hotel;
 
-namespace HotelListingAPI.Client.Country
+namespace HotelListing.API.Client.Country
 {
     public class CountryDto : BaseCountryDto
     {

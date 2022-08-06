@@ -1,9 +1,9 @@
-﻿using HotelListingAPI.Models;
-using HotelListingAPI.Models.Configuration;
+﻿using HotelListing.API.Models;
+using HotelListing.API.Models.Configuration;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace HotelListingAPI.Data
+namespace HotelListing.API.Models
 {
     public class HotelListingDbContext : IdentityDbContext<ApiUser>
     {

@@ -1,8 +1,6 @@
-﻿
+﻿using HotelListing.API.Models;
 
-using HotelListingAPI.Data;
-
-namespace HotelListingAPI.Contracts
+namespace HotelListing.API.Contracts
 {
     public interface ICountriesRepository : IGenericRepository<Country>
     {

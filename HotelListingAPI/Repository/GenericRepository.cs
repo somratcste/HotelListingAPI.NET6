@@ -1,9 +1,9 @@
-﻿using HotelListingAPI.Client;
-using HotelListingAPI.Contracts;
-using HotelListingAPI.Data;
+﻿using HotelListing.API.Client;
+using HotelListing.API.Contracts;
+using HotelListing.API.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace HotelListingAPI.Repository
+namespace HotelListing.API.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {

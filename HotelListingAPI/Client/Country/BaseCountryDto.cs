@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace HotelListingAPI.Client.Country
+namespace HotelListing.API.Client.Country
 
 {
     public abstract class BaseCountryDto

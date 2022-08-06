@@ -1,4 +1,4 @@
-﻿namespace HotelListingAPI.Client.Country
+﻿namespace HotelListing.API.Client.Country
 {
     public class GetCountryDto : BaseCountryDto
     {
