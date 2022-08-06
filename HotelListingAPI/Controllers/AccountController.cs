@@ -15,8 +15,8 @@ namespace HotelListing.API.Controllers
 
         public AccountController(IAuthManager authManager, ILogger<AccountController> logger)
         {
-            _authManager = authManager;
-            _logger = logger;
+            this._authManager = authManager;
+            this._logger = logger;
         }
 
         // POST: api/Account/register

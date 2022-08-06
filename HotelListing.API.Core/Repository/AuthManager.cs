@@ -25,10 +25,10 @@ namespace HotelListing.API.Core.Repository
 
         public AuthManager(IMapper mapper, UserManager<ApiUser> userManager, IConfiguration configuration, ILogger<AuthManager> logger)
         {
-            _mapper = mapper;
-            _userManager = userManager;
-            _configuration = configuration;
-            _logger = logger;
+            this._mapper = mapper;
+            this._userManager = userManager;
+            this._configuration = configuration;
+            this._logger = logger;
         }
 
         public async Task<string> CreateRefreshToken()
