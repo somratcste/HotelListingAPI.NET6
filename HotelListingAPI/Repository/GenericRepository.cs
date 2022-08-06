@@ -1,4 +1,5 @@
-﻿using HotelListingAPI.Contracts;
+﻿using HotelListingAPI.Client;
+using HotelListingAPI.Contracts;
 using HotelListingAPI.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,11 @@ namespace HotelListingAPI.Repository
             return entity;
         }
 
+        public Task<TResult> AddAsync<TSource, TResult>(TSource source)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task DeleteAsync(int id)
         {
             var entity = await GetAsync(id);
@@ -38,6 +44,16 @@ namespace HotelListingAPI.Repository
             return await _context.Set<T>().ToListAsync();
         }
 
+        public Task<List<TResult>> GetAllAsync<TResult>()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<PagedResult<TResult>> GetAllAsync<TResult>(QueryParameters queryParameters)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<T> GetAsync(int? id)
         {
             if (id is null)
@@ -48,10 +64,20 @@ namespace HotelListingAPI.Repository
             return await _context.Set<T>().FindAsync(id);
         }
 
+        public Task<TResult> GetAsync<TResult>(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task UpdateAsync(T entity)
         {
             _context.Update(entity);
             await _context.SaveChangesAsync();
+        }
+
+        public Task UpdateAsync<TSource>(int id, TSource source) where TSource : IBaseDto
+        {
+            throw new NotImplementedException();
         }
     }
 }

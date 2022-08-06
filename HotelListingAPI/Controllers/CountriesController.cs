@@ -10,6 +10,7 @@ using AutoMapper;
 using HotelListingAPI.Contracts;
 using HotelListingAPI.Client.Country;
 using Microsoft.AspNetCore.Authorization;
+using HotelListingAPI.Exceptions;
 
 namespace HotelListingAPI.Controllers
 {
@@ -43,7 +44,7 @@ namespace HotelListingAPI.Controllers
 
             if (country == null)
             {
-                return NotFound();
+                throw new NotFoundException(nameof(GetCountry), id);
             }
 
             var countryDto = _mapper.Map<CountryDto>(country);
