@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HotelListing.API.Models;
-using HotelListing.API.Contracts;
 using AutoMapper;
-using HotelListing.API.Client.Hotel;
 using Microsoft.AspNetCore.Authorization;
+using HotelListing.API.Core.Contracts;
+using HotelListing.API.Core.Client.Hotel;
 
 namespace HotelListing.API.Controllers
 {
@@ -23,8 +23,8 @@ namespace HotelListing.API.Controllers
 
         public HotelsController(IHotelsRepository hotelsRepository, IMapper mapper)
         {
-            this._hotelsRepository = hotelsRepository;
-            this._mapper = mapper;
+            _hotelsRepository = hotelsRepository;
+            _mapper = mapper;
         }
 
         // GET: api/Hotels
@@ -58,9 +58,12 @@ namespace HotelListing.API.Controllers
             var hotel = await _hotelsRepository.GetAsync(id);
             if (hotel == null) { return NotFound(); }
             _mapper.Map(hotelDto, hotel);
-            try {
+            try
+            {
                 await _hotelsRepository.UpdateAsync(hotel);
-            } catch (DbUpdateConcurrencyException) {
+            }
+            catch (DbUpdateConcurrencyException)
+            {
                 if (!await HotelExists(id)) { return NotFound(); } else { throw; }
             }
             return NoContent();

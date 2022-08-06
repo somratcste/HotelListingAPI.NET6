@@ -1,5 +1,5 @@
-﻿using HotelListing.API.Client.User;
-using HotelListing.API.Contracts;
+﻿using HotelListing.API.Core.Client.User;
+using HotelListing.API.Core.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

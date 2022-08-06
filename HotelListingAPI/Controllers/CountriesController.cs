@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HotelListing.API.Models;
 using AutoMapper;
-using HotelListing.API.Contracts;
-using HotelListing.API.Client.Country;
 using Microsoft.AspNetCore.Authorization;
-using HotelListing.API.Exceptions;
+using HotelListing.API.Core.Exceptions;
+using HotelListing.API.Core.Contracts;
+using HotelListing.API.Core.Client.Country;
 
 namespace HotelListing.API.Controllers
 {
@@ -23,8 +23,8 @@ namespace HotelListing.API.Controllers
 
         public CountriesController(IMapper mapper, ICountriesRepository countriesRepository)
         {
-            this._mapper = mapper;
-            this._countriesRepository = countriesRepository;
+            _mapper = mapper;
+            _countriesRepository = countriesRepository;
         }
 
         // GET: api/Countries
